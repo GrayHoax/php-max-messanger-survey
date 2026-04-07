@@ -1,0 +1,26 @@
+# Dependencies
+/vendor/
+
+# Environment
+.env
+
+# SQLite database
+/data/*.sqlite
+/data/*.db
+
+# Composer lock (optional — uncomment to commit lockfile)
+# composer.lock
+
+# IDE
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/logs/

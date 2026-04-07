@@ -1,0 +1,49 @@
+{
+    "name": "grayhoax/maxbot-feedback",
+    "description": "Бот для сбора обратной связи после мероприятий, обучений и встреч в мессенджере Max",
+    "type": "project",
+    "license": "proprietary",
+    "keywords": [
+        "max", "max-messenger", "maxbot", "feedback", "survey",
+        "bot", "php", "sqlite", "webhook", "chatbot"
+    ],
+    "authors": [
+        {
+            "name": "GrayHoax",
+            "email": "grayhoax@proton.me",
+            "homepage": "https://github.com/GrayHoax"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "grayhoax/phpmaxbot": "^0.18",
+        "symfony/yaml": "^5.4|^6.0|^7.0",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MaxBot\\Feedback\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MaxBot\\Feedback\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "start": "php public/index.php"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

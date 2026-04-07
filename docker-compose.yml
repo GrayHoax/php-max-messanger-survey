@@ -1,0 +1,38 @@
+services:
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: maxbot_feedback_nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT:-8080}:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./public:/var/www/html/public:ro
+    depends_on:
+      - php
+    networks:
+      - maxbot_net
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: maxbot_feedback_php
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DB_PATH=${DB_PATH:-/var/www/html/data/feedback.sqlite}
+      - SURVEY_CONFIG=${SURVEY_CONFIG:-/var/www/html/config/survey.yaml}
+    volumes:
+      - .:/var/www/html:cached
+      - ./data:/var/www/html/data
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+    networks:
+      - maxbot_net
+
+networks:
+  maxbot_net:
+    driver: bridge
