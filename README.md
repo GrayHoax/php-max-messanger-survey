@@ -225,7 +225,7 @@ php -S localhost:8080 -t public/
 
 Некоммерческое использование, модификация и распространение разрешены с указанием первоисточника.
 
-© 2025 [GrayHoax](https://github.com/GrayHoax)
+© 2026 [GrayHoax](https://github.com/GrayHoax)
 
 ---
 
@@ -233,7 +233,6 @@ php -S localhost:8080 -t public/
 
 По вопросам лицензирования, интеграции и доработки:
 
-- 📧 **E-mail:** grayhoax@proton.me
 - 🔗 **GitHub:** [github.com/GrayHoax](https://github.com/GrayHoax)
 
 Также используйте команду `/help` в самом боте.
